@@ -1,0 +1,8 @@
+{
+  "name": "bazosFinder",
+  "version": "1.0.0",
+  "main": "src/app/index.ts",
+  "repository": "git@github.com:HakkaMc/bazosFinder.git",
+  "author": "Jindřich Stibůrek <HakkaMc@gmail.com>",
+  "license": "MIT"
+}
