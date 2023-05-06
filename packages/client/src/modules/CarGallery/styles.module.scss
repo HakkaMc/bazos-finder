@@ -1,0 +1,36 @@
+.gallery{
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  //overflow: auto;
+  flex: 1 0 auto;
+  max-height: 100%;
+  //height: 100%;
+  flex-wrap: wrap;
+
+  & > * {
+    width: 240px;
+    height: 240px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: solid 1px #ececec;
+    border-radius: 5px;
+    background: white;
+  }
+
+  &.narrowMode {
+    & > * {
+      width: 140px;
+      height: 140px;
+    }
+  }
+
+  img{
+    max-height: 100% !important;
+    max-width: 100% !important;
+  }
+}

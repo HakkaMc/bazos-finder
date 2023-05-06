@@ -1,0 +1,12 @@
+{
+  "name": "@bf2/shared",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "license": "MIT",
+  "private": true,
+  "peerDependencies": {
+    "babel-plugin-macros": "*",
+    "@types/babel-plugin-macros": "*"
+  }
+}

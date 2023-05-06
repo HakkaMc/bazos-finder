@@ -1,0 +1,62 @@
+{
+  "name": "bazos-finder-2",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "client": "cd ./packages/client && yarn codegen && yarn start",
+    "start": "yarn client",
+    "server": "cd ./packages/server && yarn start",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx . --cache --ignore-path .gitignore",
+    "lint:fix": "yarn lint --fix",
+    "codegen": "cd ./packages/client && yarn graphql-codegen",
+    "clean": "find . | grep /node_modules$ | grep -v /node_modules/ | xargs rm -fR"
+  },
+  "dependencies": {
+    "graphql": "^16.6.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "eslint": "^8.23.0",
+    "eslint-plugin-react": "^7.31.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "eslint-plugin-typescript-sort-keys": "^2.1.0",
+    "sort-package-json": "^1.57.0",
+    "webpack-workspace": "^0.0.2",
+    "babel-plugin-macros": "^3.1.0",
+    "@types/babel-plugin-macros": "^2.8.5"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=16.7.0",
+    "yarn": ">=1.22.4"
+  },
+  "packageManager": "yarn@1.22.4"
+}

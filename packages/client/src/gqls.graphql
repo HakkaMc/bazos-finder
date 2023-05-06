@@ -1,0 +1,80 @@
+query getCars($filter: GetCarsFilter) {
+    getCars (filter: $filter){
+        id
+        link
+        title
+        imgUrl
+        imgBase64
+        price
+        location
+        publishedAt
+        power
+        engine
+        tacho
+        year
+        description
+        favourite
+        tags
+    }
+}
+
+query getCar($carId: String!){
+    getCar(carId: $carId){
+        id
+        link
+        title
+        imgUrl
+        imgBase64
+        price
+        location
+        publishedAt
+        power
+        engine
+        tacho
+        year
+        description
+        favourite
+        tags
+    }
+}
+
+query getCarPreviewGallery($carId: String!){
+    getCarGallery(carId: $carId){
+        previewUrl
+        previewBase64
+    }
+}
+
+query getCarGallery($carId: String!){
+    getCarGallery(carId: $carId){
+        imgUrl
+        imgBase64
+        previewUrl
+        previewBase64
+    }
+}
+
+mutation hideCar($carId: String!){
+    hideCar(carId: $carId)
+}
+
+mutation reinitCars($force: Boolean!){
+    reinitCars(force: $force)
+}
+
+mutation parseCarDetails{
+    parseCarDetails
+}
+
+mutation updateField($carId: String!, $field: String!, $value: String!){
+    updateField(carId: $carId, field: $field, value: $value)
+}
+
+mutation downloadImages($carId: String!){
+    downloadImages(carId: $carId)
+}
+
+subscription isRefreshing{
+    isRefreshing
+}
+

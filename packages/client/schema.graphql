@@ -1,0 +1,68 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+    subscription: Subscription
+}
+
+type GetCarsCar {
+    description: String
+    engine: String
+    favourite: Boolean
+    id: String!
+    imgBase64: String!
+    imgUrl: String!
+    invalid: Boolean
+    link: String!
+    location: String!
+    modified: Boolean
+    power: Float
+    price: Float!
+    publishedAt: Float!
+    tacho: Float
+    tags: [String!]
+    title: String!
+    vendor: String!
+    year: Float
+}
+
+type GetCarsCarGallery {
+    imgBase64: String
+    imgUrl: String
+    previewBase64: String
+    previewUrl: String
+}
+
+type Mutation {
+    downloadImages(carId: String!): String!
+    hideCar(carId: String!): String!
+    parseCarDetails: String!
+    reinitCars(force: Boolean!): String!
+    updateField(carId: String!, field: String!, value: String!): String!
+}
+
+type Query {
+    getCar(carId: String!): GetCarsCar
+    getCarGallery(carId: String!): [GetCarsCarGallery]
+    getCars(filter: GetCarsFilter): [GetCarsCar]
+    hello: String!
+}
+
+type Subscription {
+    isRefreshing: Boolean!
+}
+
+input GetCarsFilter {
+    engine: String
+    favourite: Boolean!
+    powerFrom: Float!
+    powerTo: Float!
+    priceFrom: Float!
+    priceTo: Float!
+    sortBy: String!
+    tachoTo: Float!
+    textFilter: String
+    yearFrom: Float!
+    yearTo: Float!
+}

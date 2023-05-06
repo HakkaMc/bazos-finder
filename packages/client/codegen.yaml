@@ -1,0 +1,11 @@
+schema: "http://localhost:4000/graphql"
+documents: './src/gqls.graphql'
+generates:
+  ./src/graphql.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      fetcher: fetch
+      withHooks: true
